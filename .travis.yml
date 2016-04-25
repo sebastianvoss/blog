@@ -1,6 +1,5 @@
 language: ruby
 rvm:
   - 2.3.0
-script:
-  - bundle exec jekyll build
+script: jekyll build
 after_success: s3_website push
