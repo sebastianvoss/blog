@@ -8,6 +8,7 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   bucket: test.sebastianvoss.com
-  endpoint: eu-west-1
+  region: eu-west-1
   skip_cleanup: true
+  acl: public_read
   detect_encoding: true
