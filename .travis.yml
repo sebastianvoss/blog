@@ -10,5 +10,4 @@ deploy:
   bucket: test.sebastianvoss.com
   region: eu-west-1
   skip_cleanup: true
-  acl: public_read
   detect_encoding: true
