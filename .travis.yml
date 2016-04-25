@@ -8,5 +8,6 @@ deploy:
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key: $AWS_SECRET_KEY
   bucket: blog.sebastianvoss.com
+  endpoint: blog.sebastianvoss.com.s3-website.eu-central-1.amazonaws.com
   skip_cleanup: true
   detect_encoding: true
