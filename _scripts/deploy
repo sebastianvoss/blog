@@ -8,7 +8,7 @@ s3_bucket=$(
     ("test")   "s3://test.sebastianvoss.com" ;;
   esac)
 
-if [ "$s3_bucket" eq "" ]
+if [ "$s3_bucket" == "" ]
 then
   echo "Branch $TRAVIS_BRANCH is not configured in scripts/deploy" 
 else
