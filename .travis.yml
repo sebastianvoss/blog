@@ -2,9 +2,9 @@ language: ruby
 rvm:
   - 2.3.0
 script:
-  scripts/build
+  _scripts/build
 before_install:
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 after_success:
-  scripts/deploy
+  _scripts/deploy

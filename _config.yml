@@ -19,3 +19,4 @@ github_username:  sebastianvoss
 
 # Build settings
 markdown: kramdown
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile']
