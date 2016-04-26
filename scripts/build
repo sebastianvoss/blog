@@ -1,9 +1,10 @@
 #!/bin/bash
 
-if [[ $TRAVIS_BRANCH == 'test' ]]
-  jekyll build --config "_config.yml,_config_test.yml"
-elif [[ $TRAVIS_BRANCH == 'master' ]]
-  jekyll build --config "_config.yml"
-else
-  echo "$TRAVIS_BRANCH is not configured in scripts/build"
-fi
+case $TRAVIS_BRANCH in
+  "master")
+    jekyll build --config "_config.yml"
+  "test")
+    jekyll build --config "_config.yml,_config_test.yml"
+  *)
+    echo "$TRAVIS_BRANCH is not configured in scripts/build"
+esac
