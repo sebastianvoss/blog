@@ -1,0 +1,4 @@
+#!/bin/bash
+
+echo "Deployment to AWS S3"
+aws s3 cp _site s3://test.sebastianvoss.com --recursive
