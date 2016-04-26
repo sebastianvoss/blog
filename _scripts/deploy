@@ -11,6 +11,7 @@ s3_bucket=$(
 if [ "$s3_bucket" == "" ]; then
   echo "Branch $TRAVIS_BRANCH is not configured in scripts/deploy" 
 else
-  aws s3 sync _site "$s3_bucket" --delete --cache-control="max-age=3600" --exclude "*.css"
-  aws s3 sync _site "$s3_bucket" --delete --cache-control="max-age=604800" --include "*.css"
+  find _site -type f -exec gzip -9 {} \; -exec mv {}.gz {} \;
+  aws s3 sync _site "$s3_bucket" --delete --cache-control="max-age=3600" --exclude "*.css" --content-encoding "gzip"
+  aws s3 sync _site "$s3_bucket" --delete --cache-control="max-age=604800" --include "*.css" --content-encoding "gzip"
 fi
