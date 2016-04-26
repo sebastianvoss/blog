@@ -1,3 +1,3 @@
 #!/bin/bash
 
-jekyll build --config _config_test.yml
+jekyll build --config "_config.yml,_config_test.yml"
