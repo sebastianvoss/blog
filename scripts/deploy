@@ -1,4 +1,5 @@
 #!/bin/bash
 
 echo "Deployment to AWS S3"
+aws s3 rm s3://test.sebastianvoss.com --recursive
 aws s3 cp _site s3://test.sebastianvoss.com --recursive --exclude "Gemfile*" --exclude "scripts"
