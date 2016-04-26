@@ -6,6 +6,7 @@ s3_bucket=$(
   case "$TRAVIS_BRANCH" in
     #("master") "" ;;
     ("test")   "s3://test.sebastianvoss.com" ;;
+    (*)        "" ;;
   esac)
 
 if [ $s3_bucket == "" ]
