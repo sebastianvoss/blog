@@ -1,3 +1,9 @@
 #!/bin/bash
 
-jekyll build --config "_config.yml,_config_test.yml"
+if [[ $TRAVIS_BRANCH == 'test' ]]
+  jekyll build --config "_config.yml,_config_test.yml"
+elif [[ $TRAVIS_BRANCH == 'master' ]]
+  jekyll build --config "_config.yml"
+else
+  echo "$TRAVIS_BRANCH is not configured in scripts/build"
+fi

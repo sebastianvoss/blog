@@ -5,8 +5,8 @@ echo "Deployment to AWS S3 (branch $TRAVIS_BRANCH)"
 if [[ $TRAVIS_BRANCH == 'test' ]]
   aws s3 rm s3://test.sebastianvoss.com --recursive
   aws s3 cp _site s3://test.sebastianvoss.com --recursive --exclude "Gemfile*" --exclude "scripts"  
-else if [[ $TRAVIS_BRANCH == 'master' ]]
+elif [[ $TRAVIS_BRANCH == 'master' ]]
   echo "S3 bucket for production not yet configured"
-else 
+else
   echo "$TRAVIS_BRANCH is not configured in scripts/deploy"
 fi
