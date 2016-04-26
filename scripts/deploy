@@ -2,12 +2,16 @@
 
 echo "Deployment to AWS S3 (branch $TRAVIS_BRANCH)"
 
-case "$TRAVIS_BRANCH" in
-  ("master") echo "S3 bucket for production not yet configured"
-             ;;
-  ("test")   aws s3 rm s3://test.sebastianvoss.com --recursive
-             aws s3 cp _site s3://test.sebastianvoss.com --recursive --exclude "Gemfile*" --exclude "scripts"
-             ;;
-  (*)        echo "$TRAVIS_BRANCH is not configured in scripts/deploy" 
-             ;;
-esac
+s3_bucket=$(
+  case "$TRAVIS_BRANCH" in
+    ("master") "" ;;
+    ("test")   "test.sebastianvoss.com" ;;
+  esac)
+
+if [[ "$s3_bucket" == "" ]]
+  then 
+    echo "Branch $TRAVIS_BRANCH is not configured in scripts/deploy" 
+  else
+    aws s3 rm s3://$s3_bucket --recursive
+    aws s3 cp _site s3://test.sebastianvoss.com --recursive --exclude "Gemfile*" --exclude "scripts"
+fi

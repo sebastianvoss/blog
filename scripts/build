@@ -1,7 +1,14 @@
 #!/bin/bash
 
-case "$TRAVIS_BRANCH" in
-  ("master") jekyll build --config "_config.yml" ;;
-  ("test")   jekyll build --config "_config.yml,_config_test.yml" ;;
-  (*)        echo "$TRAVIS_BRANCH is not configured in scripts/build" ;;
-esac
+jekyll_config=$(
+  case "$TRAVIS_BRANCH" in
+    ("master") "_config.yml" ;;
+    ("test")   "_config.yml,_config_test.yml" ;;
+  esac)
+
+if [[ "$jekyll_config" == "" ]]
+  then 
+    echo "Branch $TRAVIS_BRANCH is not configured in scripts/build" 
+  else
+    jekyll build --config "$jekyll_config"
+fi
