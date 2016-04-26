@@ -4,6 +4,7 @@ echo "Deployment to AWS S3 (branch $TRAVIS_BRANCH)"
 
 case "$TRAVIS_BRANCH" in
   ("master") echo "S3 bucket for production not yet configured"
+             ;;
   ("test")   aws s3 rm s3://test.sebastianvoss.com --recursive
              aws s3 cp _site s3://test.sebastianvoss.com --recursive --exclude "Gemfile*" --exclude "scripts"
              ;;
