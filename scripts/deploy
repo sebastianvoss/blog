@@ -13,5 +13,5 @@ if [[ "$s3_bucket" == "" ]]
     echo "Branch $TRAVIS_BRANCH is not configured in scripts/deploy" 
   else
     aws s3 rm s3://$s3_bucket --recursive
-    aws s3 cp _site s3://test.sebastianvoss.com --recursive --exclude "Gemfile*" --exclude "scripts"
+    aws s3 cp _site s3://$s3_bucket --recursive --exclude "Gemfile*" --exclude "scripts"
 fi
