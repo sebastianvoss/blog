@@ -4,7 +4,7 @@ echo "Deployment to AWS S3 (branch $TRAVIS_BRANCH)"
 
 s3_bucket=$(
   case "$TRAVIS_BRANCH" in
-    ("master") "" ;;
+    #("master") "" ;;
     ("test")   "s3://test.sebastianvoss.com" ;;
   esac)
 
