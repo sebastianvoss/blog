@@ -9,7 +9,6 @@ s3_bucket=$(
   esac)
 
 if [[ "$s3_bucket" == "" ]]
-then
   echo "Branch $TRAVIS_BRANCH is not configured in scripts/deploy" 
 else
   aws s3 rm "$s3_bucket" --recursive
