@@ -2,8 +2,8 @@
 
 jekyll_config=$(
   case "$TRAVIS_BRANCH" in
-    ("master") "_config.yml" ;;
-    ("test")   "_config.yml,_config_test.yml" ;;
+    ("master") echo "_config.yml" ;;
+    ("test")   echo "_config.yml,_config_test.yml" ;;
   esac)
 
 if [ "$jekyll_config" == "" ]; then
