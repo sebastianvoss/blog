@@ -1,10 +1,10 @@
 #!/bin/bash
 
-case $TRAVIS_BRANCH in
-  "master")
-    jekyll build --config "_config.yml"
-  "test")
-    jekyll build --config "_config.yml,_config_test.yml"
-  *)
-    echo "$TRAVIS_BRANCH is not configured in scripts/build"
+case "$TRAVIS_BRANCH" in
+  "master") jekyll build --config "_config.yml"
+            ;;
+  "test")   jekyll build --config "_config.yml,_config_test.yml"
+            ;;
+  *)        echo "$TRAVIS_BRANCH is not configured in scripts/build"
+            ;;
 esac
