@@ -6,9 +6,9 @@ jekyll_config=$(
     ("test")   "_config.yml,_config_test.yml" ;;
   esac)
 
-if [[ "$jekyll_config" == "" ]]
-  then 
-    echo "Branch $TRAVIS_BRANCH is not configured in scripts/build" 
-  else
-    jekyll build --config "$jekyll_config"
+if [ "$jekyll_config" == "" ]
+then 
+  echo "Branch $TRAVIS_BRANCH is not configured in scripts/build" 
+else
+  jekyll build --config "$jekyll_config"
 fi
