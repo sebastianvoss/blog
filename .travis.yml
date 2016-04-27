@@ -1,9 +1,11 @@
-language: ruby
-rvm:
-  - 2.3.0
-script:
-  _scripts/build
+language: node_js
+node_js:
+  - "5.1"
+before_script:
+  - npm install -g gulp
+script: gulp
 before_install:
+  - npm install
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 after_success:

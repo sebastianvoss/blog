@@ -1,4 +1,6 @@
 _site/
+_deploy/
+node_modules/
 .sass-cache/
 .jekyll-metadata
 Gemfile.lock
