@@ -1,43 +1,14 @@
 {
   "devDependencies": {
     "gulp": "^3.6.2",
-    "gulp-babel": "^4.0.0",
-    "gulp-coffee": "^1.4.3",
-    "gulp-coffeelint": "^0.3.3",
-    "gulp-concat": "^2.2.0",
     "gulp-cssmin": "^0.1.7",
-    "gulp-header": "^1.0.2",
     "gulp-htmlmin": "^1.3.0",
-    "gulp-jshint": "^1.6.1",
-    "gulp-less": "^1.2.3",
-    "gulp-minify-css": "^0.3.4",
-    "gulp-minify-html": "^0.1.3",
-    "gulp-rename": "^1.2.0",
-    "gulp-sass": "^0.7.1",
-    "gulp-uglify": "^0.3.0",
-    "gulp-util": "^3.0.7",
-    "gulp-watch": "^0.6.4"
+    "gulp-util": "^3.0.7"
   },
   "name": "blog",
   "version": "1.0.0",
   "description": "Blog",
   "main": "index.js",
-  "dependencies": {
-    "gulp-coffee": "^1.4.3",
-    "gulp-coffeelint": "^0.3.4",
-    "gulp-babel": "^4.0.1",
-    "gulp": "^3.9.1",
-    "gulp-header": "^1.7.1",
-    "gulp-less": "^1.3.9",
-    "gulp-jshint": "^1.12.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^0.7.3",
-    "gulp-minify-html": "^0.1.8",
-    "gulp-watch": "^0.6.10",
-    "gulp-uglify": "^0.3.2",
-    "gulp-minify-css": "^0.3.13"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
