@@ -1,9 +1,9 @@
-language: node_js
-node_js:
-  - "5.1"
+language: ruby
+rvm:
+  - 2.3.0
+script: gulp
 before_script:
   - npm install -g gulp
-script: gulp
 before_install:
   - npm install
   - pip install --user awscli
