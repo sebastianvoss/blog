@@ -20,13 +20,13 @@ gulp.task('jekyll', () => {
   jekyll.stderr.on('data', jekyllLogger);
 });
 
-gulp.task('htmlmin', ['jekyll'], function() {
+gulp.task('htmlmin', function() {
   return gulp.src('_site/**/*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('_deploy'))
 });
 
-gulp.task('cssmin', ['jekyll'], function () {
+gulp.task('cssmin', function () {
     gulp.src('_site/**/*.css')
         .pipe(cssmin())
         //.pipe(rename({suffix: '.min'}))
@@ -34,4 +34,4 @@ gulp.task('cssmin', ['jekyll'], function () {
 });
 
 // Default Task
-gulp.task('default', ['jekyll', 'htmlmin', 'cssmin']);
+gulp.task('default', ['htmlmin', 'cssmin']);

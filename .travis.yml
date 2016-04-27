@@ -4,7 +4,9 @@ node_js:
 before_script:
   - npm install -g gulp
   - gem install jekyll
-script: gulp
+script: 
+  - gulp jekyll
+  - gulp
 before_install:
   - rvm install 2.3.0
   - npm install
