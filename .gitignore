@@ -1,5 +1,6 @@
 _site/
 _deploy/
+_bower_components/
 node_modules/
 .sass-cache/
 .jekyll-metadata
