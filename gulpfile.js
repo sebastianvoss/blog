@@ -4,8 +4,10 @@ var gulp = require('gulp');
 // Include Our Plugins
 const child = require('child_process');
 const gutil = require('gulp-util');
-var htmlmin = require('gulp-htmlmin');
-var cssmin = require('gulp-cssmin');
+const htmlmin = require('gulp-htmlmin');
+const cssmin = require('gulp-cssmin');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
 
 gulp.task('jekyll', () => {
   const jekyll = child.spawn('jekyll', ['build']);
@@ -33,5 +35,15 @@ gulp.task('cssmin', function () {
         .pipe(gulp.dest('_deploy'));
 });
 
+gulp.task('imagemin', () => {
+  return gulp.src('_site/**/*.jpeg')
+    .pipe(imagemin({
+      progressive: true,
+      svgoPlugins: [{removeViewBox: false}],
+      use: [pngquant()]
+    }))
+    .pipe(gulp.dest('_deploy'));
+});
+
 // Default Task
-gulp.task('default', ['htmlmin', 'cssmin']);
+gulp.task('default', ['htmlmin', 'cssmin', 'imagemin']);
