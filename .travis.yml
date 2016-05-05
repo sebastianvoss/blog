@@ -3,6 +3,7 @@ node_js:
   - "5.1"
 before_script:
   - npm install -g gulp
+  - npm install -g bower
   - gem install jekyll
 script: 
   - gulp jekyll
@@ -10,6 +11,7 @@ script:
 before_install:
   - rvm install 2.3.0
   - npm install
+  - bower install bootstrap#v4.0.0-alpha.2
   - pip install --user awscli
   - export PATH=$PATH:$HOME/.local/bin
 after_success:
