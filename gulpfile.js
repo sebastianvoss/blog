@@ -7,7 +7,7 @@ const gutil = require('gulp-util');
 const htmlmin = require('gulp-htmlmin');
 const cssmin = require('gulp-cssmin');
 const imagemin = require('gulp-imagemin');
-const pngquant = require('imagemin-pngquant');
+//const pngquant = require('imagemin-pngquant');
 
 gulp.task('jekyll', () => {
   const jekyll = child.spawn('jekyll', ['build']);
@@ -39,8 +39,8 @@ gulp.task('imagemin', () => {
   return gulp.src('_site/**/*.jpeg')
     .pipe(imagemin({
       progressive: true,
-      svgoPlugins: [{removeViewBox: false}],
-      use: [pngquant()]
+      svgoPlugins: [{removeViewBox: false}]
+      //use: [pngquant()]
     }))
     .pipe(gulp.dest('_deploy'));
 });
